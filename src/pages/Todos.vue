@@ -82,7 +82,7 @@ export default {
     methods: {
         createTodo() {
             if (this.todoText.trim().length < 1) { return; }
-            this.todos.push({id: 'hf78i0asdse', done: false, text: this.todoText})
+            this.todos.push({id: this.randomId(), done: false, text: this.todoText})
         },
         updateTodo() {
             for (let todo of this.todos) {
@@ -118,6 +118,10 @@ export default {
                     break;
                 }
             }
+        },
+        randomId() {
+            // Credit goes to: https://stackoverflow.com/a/21963136
+            return Math.random().toString(36).substr(2, 10);
         }
     }
 }
