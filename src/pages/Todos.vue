@@ -70,10 +70,10 @@ export default {
     data () {
         return {
             todos: [
-                {id: 'hf787223rh8', done: false, text: 'This is a todo item'},
-                {id: 'hf787ehhwww', done: false, text: 'This is todo item 1'},
-                {id: 'hf7872qwqwe', done: true, text: 'This is todo item 2'},
-                {id: 'hf78i0e9use', done: false, text: 'This is todo item 3'}
+                {id: 'hf787223rh8', done: false, text: 'Water my plants'},
+                {id: 'hf787ehhwww', done: false, text: 'Study for 30 minutes'},
+                {id: 'hf7872qwqwe', done: true, text: 'Buy some pasta and tomatoes'},
+                {id: 'hf78i0e9use', done: false, text: 'Exercise for 30 minutes'}
             ],
             todoText: '',
             editingTodoId: ''
