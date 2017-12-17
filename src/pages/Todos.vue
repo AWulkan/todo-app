@@ -19,7 +19,7 @@
                     <div class="column is-half is-offset-one-quarter">
                         <div class="field is-grouped is-grouped-right">
                             <p v-if="editingTodoId" class="control">
-                                <a @click="updateTodo" class="button is-link is-medium">update</a>
+                                <a @click="updateTodo" class="button is-link is-medium">Update</a>
                             </p>
                             <p v-else class="control">
                                 <a @click="createTodo" class="button is-link is-medium">Create</a>
