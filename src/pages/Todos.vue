@@ -106,6 +106,9 @@ export default {
                     break;
                 }
             }
+
+            this.todoText = '';
+            this.editingTodoId = '';
         },
         cancelTodo() {
             this.editingTodoId = '';
