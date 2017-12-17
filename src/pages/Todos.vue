@@ -85,6 +85,8 @@ export default {
             this.todos.push({id: this.randomId(), done: false, text: this.todoText})
         },
         updateTodo() {
+            if (this.todoText.length < 1) { return; }
+
             for (let todo of this.todos) {
                 if (todo.id === this.editingTodoId) {
                     todo.text = this.todoText;
