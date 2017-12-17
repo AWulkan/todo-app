@@ -2,6 +2,9 @@
 
 > A todo app using Vue and .NET Core 2.0
 
+## Demo
+[Click here to see a demo of the current app state](https://vue-dotnet-todo-app.netlify.com/todos)
+
 ## Build Setup
 
 ``` bash
