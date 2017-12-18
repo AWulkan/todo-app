@@ -158,7 +158,7 @@ export default {
 .box-todo-buttons {
     display: flex;
     height: 100%;
-    width: 12rem;
+    min-width: 12rem;
 }
 
 .box-todo-button {
