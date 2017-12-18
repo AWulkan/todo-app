@@ -7,7 +7,7 @@ The idea behind this project is to create a fully featured, but simple to unders
 I'm also doing this to learn more about Vue/.NET myself, so there might be some bugs initially!
 
 ## Planned Features
-* Fully Vue-based frontend UI based on Bulma CSS framework.
+* Fully Vue-based frontend UI, using the Bulma CSS framework.
 * Authentication with .NET Core 2.0 API.
 * Store todos in PostgreSQL with .NET Core 2.0.
 * Vuex store for local todo/session state.
