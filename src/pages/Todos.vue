@@ -69,17 +69,24 @@ export default {
     name: 'Todos',
     data () {
         return {
-            todos: [
-                {id: 'hf787223rh8', done: false, text: 'Water my plants'},
-                {id: 'hf787ehhwww', done: false, text: 'Study for 30 minutes'},
-                {id: 'hf7872qwqwe', done: true, text: 'Buy some pasta and tomatoes'},
-                {id: 'hf78i0e9use', done: false, text: 'Exercise for 30 minutes'}
-            ],
+            todos: [],
             todoText: '',
             editingTodoId: ''
         }
     },
+    created() {
+        this.getTodos();
+    },
     methods: {
+        getTodos() {
+            this.$http.get('http://localhost:5000/api/todo')
+            .then((res) => {
+                this.todos = res.data;
+            })
+            .catch((error) => {
+                console.log('Could not get todos:', error);
+            });
+        },
         createTodo() {
             if (this.todoText.trim().length < 1) { return; }
             this.todos.push({id: this.randomId(), done: false, text: this.todoText})
