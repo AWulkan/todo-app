@@ -81,23 +81,37 @@ export default {
         getTodos() {
             this.$http.get('http://localhost:5000/api/todo')
             .then((res) => {
-                this.todos = res.data;
+                this.todos = res.data
             })
             .catch((error) => {
-                console.log('Could not get todos:', error);
+                console.log('Could not get todos:', error)
             });
         },
         createTodo() {
-            if (this.todoText.trim().length < 1) { return; }
-            this.todos.push({id: this.randomId(), done: false, text: this.todoText})
+            if (this.todoText.trim().length < 1) { return }
+
+            this.$http.post('http://localhost:5000/api/todo', {
+                text: this.todoText,
+                done: false
+            })
+            .then((res) => {
+                this.todos.push({
+                    id: res.data.id,
+                    done: res.data.done,
+                    text: res.data.text
+                })
+            })
+            .catch((err) => {
+                console.log('Error trying to create todo:', err)
+            });
         },
         updateTodo() {
-            if (this.todoText.length < 1) { return; }
+            if (this.todoText.length < 1) { return }
 
             for (let todo of this.todos) {
                 if (todo.id === this.editingTodoId) {
-                    todo.text = this.todoText;
-                    break;
+                    todo.text = this.todoText
+                    break
                 }
             }
 
@@ -105,34 +119,34 @@ export default {
             this.todoText = '';
         },
         enableEditing(todo) {
-            this.editingTodoId = todo.id;
-            this.todoText = todo.text;
+            this.editingTodoId = todo.id
+            this.todoText = todo.text
         },
         deleteTodo(id) {
             for (let todo in this.todos) {
                 if (this.todos[todo].id === id) {
-                    this.todos.splice(todo, 1);
-                    break;
+                    this.todos.splice(todo, 1)
+                    break
                 }
             }
 
-            this.todoText = '';
-            this.editingTodoId = '';
+            this.todoText = ''
+            this.editingTodoId = ''
         },
         cancelTodo() {
-            this.editingTodoId = '';
-            this.todoText = '';
+            this.editingTodoId = ''
+            this.todoText = ''
         },
         toggleTodoStatus(id) {
             for (let todo of this.todos) {
                 if (todo.id === id) {
-                    todo.done = !todo.done;
-                    break;
+                    todo.done = !todo.done
+                    break
                 }
             }
         },
         randomId() {
-            return Math.random().toString(36).substr(2, 10);
+            return Math.random().toString(36).substr(2, 10)
         }
     }
 }
