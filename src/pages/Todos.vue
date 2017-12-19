@@ -75,7 +75,7 @@ export default {
         }
     },
     created() {
-        this.getTodos();
+        this.getTodos()
     },
     methods: {
         getTodos() {
@@ -157,7 +157,7 @@ export default {
 .box {
     padding: 0;
     overflow: hidden;
-    height: 3rem;
+    height: 2.5rem;
 }
 
 .box-content {
@@ -168,15 +168,15 @@ export default {
 
 .box-todo-text {
     display: flex;
-    font-size: 1.5rem;
-    padding: 0.3rem 1rem;
+    font-size: 1.3rem;
+    padding: 0.2rem 0.5rem 0 0.7rem;
     color: #333;
 }
 
 .box-todo-buttons {
     display: flex;
     height: 100%;
-    min-width: 12rem;
+    min-width: 11rem;
 }
 
 .box-todo-button {
@@ -189,7 +189,7 @@ export default {
     user-select: none;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .box-todo-edit {
