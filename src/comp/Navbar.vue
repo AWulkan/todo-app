@@ -1,27 +1,22 @@
 <template>
     <nav class="navbar is-white">
-        <div class="navbar-brand">
-            <router-link to="/" class="navbar-item">
-                <span class="subtitle is-4">TODO</span>
-                <!-- <img src="https://bulma.io/images/bulma-logo.png" alt="Logo" width="112" height="28"> -->
-            </router-link>
+        <div class="container">
+            <div class="navbar-brand">
+                <router-link to="/" class="navbar-item">
+                    <span class="subtitle is-4">TODO</span>
+                    <!-- <img src="https://bulma.io/images/bulma-logo.png" alt="Logo" width="112" height="28"> -->
+                </router-link>
 
-            <div @click="toggleNavMenu" class="navbar-burger burger" :class="{'is-active': navMenuActive}">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div @click="toggleNavMenu" class="navbar-burger burger" :class="{'is-active': navMenuActive}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
 
-        <div class="navbar-menu" :class="{'is-active': navMenuActive}">
-            <div class="navbar-end">
-                <router-link to="todos" class="navbar-item">My Todos</router-link>
-                <div class="navbar-item register-login-logout-button">
-                    <p class="control">
-                        <router-link to="login" class="button is-link">
-                            <span>Log In / Register</span>
-                        </router-link>
-                    </p>
+            <div class="navbar-menu" :class="{'is-active': navMenuActive}">
+                <div class="navbar-end">
+                    <router-link to="todos" class="navbar-item">My Todos</router-link>
                 </div>
             </div>
         </div>
